@@ -17,13 +17,20 @@ import { socialNetwork } from "@/constants/socialNetwork";
 import { TextSkeleton } from "../ui/loading-skeleton";
 
 export const HeroSection = () => {
-  const { t, isHydrated } = useTranslations();
+  const { t, isHydrated, language } = useTranslations();
 
   const handleDownloadCV = () => {
-    // Descargar el CV real
+    // Descargar el CV según el idioma seleccionado
     const link = document.createElement("a");
-    link.href = "/cvs/CV_RICARDO_2025.pdf";
-    link.download = "CV_Ricardo_Solis_2025.pdf";
+
+    if (language === "en") {
+      link.href = "/cvs/CV_RICARDO_2025_ENGLISH.pdf";
+      link.download = "CV_Ricardo_Solis_2025_English.pdf";
+    } else {
+      link.href = "/cvs/CV_RICARDO_2025_SPANISH.pdf";
+      link.download = "CV_Ricardo_Solis_2025_Spanish.pdf";
+    }
+
     link.target = "_blank";
     link.click();
   };

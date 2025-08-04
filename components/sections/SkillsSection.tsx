@@ -18,10 +18,7 @@ export const SkillsSection = () => {
       color: "text-blue-600",
       bgColor: "bg-blue-50",
       borderColor: "border-blue-200",
-      darkColor: "dark:text-blue-400",
-      darkBgColor: "dark:bg-blue-900/30",
-      darkBorderColor: "dark:border-blue-600",
-      darkTextColor: "dark:text-blue-200",
+      textColor: "text-blue-800",
     },
     {
       icon: Database,
@@ -30,10 +27,7 @@ export const SkillsSection = () => {
       color: "text-green-600",
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
-      darkColor: "dark:text-green-400",
-      darkBgColor: "dark:bg-green-900/30",
-      darkBorderColor: "dark:border-green-600",
-      darkTextColor: "dark:text-green-200",
+      textColor: "text-green-800",
     },
     {
       icon: Wrench,
@@ -42,10 +36,7 @@ export const SkillsSection = () => {
       color: "text-purple-600",
       bgColor: "bg-purple-50",
       borderColor: "border-purple-200",
-      darkColor: "dark:text-purple-400",
-      darkBgColor: "dark:bg-purple-900/30",
-      darkBorderColor: "dark:border-purple-600",
-      darkTextColor: "dark:text-purple-200",
+      textColor: "text-purple-800",
     },
   ];
 
@@ -97,9 +88,7 @@ export const SkillsSection = () => {
                 <div
                   className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center ${category.bgColor} dark:bg-slate-700`}
                 >
-                  <category.icon
-                    className={`h-8 w-8 ${category.color} ${category.darkColor}`}
-                  />
+                  <category.icon className={`h-8 w-8 ${category.color}`} />
                 </div>
                 <CardTitle className="text-xl font-bold text-blue-900 dark:text-white">
                   {category.title}
@@ -111,7 +100,7 @@ export const SkillsSection = () => {
                     <Badge
                       key={skillIndex}
                       variant="outline"
-                      className={`px-3 py-1 text-sm transition-all hover:scale-105 ${category.borderColor} text-blue-800 ${category.bgColor} dark:${category.darkBorderColor} ${category.darkTextColor} dark:${category.darkBgColor}`}
+                      className={`px-3 py-1 text-sm font-medium transition-all hover:scale-105 ${category.borderColor} ${category.textColor} ${category.bgColor}`}
                     >
                       {skill}
                     </Badge>

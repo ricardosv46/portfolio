@@ -133,20 +133,13 @@ export const ProjectSection = () => {
           {filteredProjects.map((project, index) => (
             <Card
               key={project.id}
-              className={`transition-all relative duration-300 hover:shadow-xl hover:-translate-y-1 group overflow-hidden card-shadow bg-white border-gray-200 dark:bg-slate-800 dark:border-slate-700 ${
+              className={`transition-all  duration-300 hover:shadow-xl hover:-translate-y-1 group overflow-hidden card-shadow bg-white border-gray-200 dark:bg-slate-800 dark:border-slate-700 ${
                 project.featured ? "ring-2 ring-blue-400/50" : ""
               }`}
               style={{
                 animationDelay: `${index * 100}ms`,
               }}
             >
-              {project.featured && (
-                <div className="absolute -top-5 -right-3 bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center z-10">
-                  <Sparkles className="w-3 h-3 mr-1" />
-                  {t.projects.featured}
-                </div>
-              )}
-
               {/* Project Image Preview */}
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -159,6 +152,13 @@ export const ProjectSection = () => {
                   <ImageIcon className="w-3 h-3 mr-1" />
                   {project.images.length}
                 </div>
+
+                {project.featured && (
+                  <div className="absolute top-1 right-0.5 bg-blue-700 text-white px-3 py-1 rounded-full text-xs font-semibold flex items-center z-10">
+                    <Sparkles className="w-3 h-3 mr-1" />
+                    {t.projects.featured}
+                  </div>
+                )}
               </div>
 
               <CardHeader>
