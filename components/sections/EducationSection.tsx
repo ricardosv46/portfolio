@@ -119,7 +119,7 @@ export const EducationSection = () => {
         </div>
 
         {/* Certificaciones adicionales */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           <h3 className="text-xl font-semibold mb-8 text-center text-blue-900 dark:text-white">
             {t.education.certifications}
           </h3>
@@ -166,7 +166,7 @@ export const EducationSection = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
